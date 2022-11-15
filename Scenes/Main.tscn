@@ -104,3 +104,6 @@ text = "No"
 position = Vector2( -70, -28 )
 scale = Vector2( 1.80208, 1.375 )
 normal = ExtResource( 5 )
+
+[connection signal="pressed" from="done/Yes/yes" to="." method="_on_done_yes_pressed"]
+[connection signal="pressed" from="done/No/no" to="." method="_on_done_no_pressed"]

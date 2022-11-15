@@ -57,11 +57,14 @@ func _ready():
 	new_player()
 
 func new_player():
+	acting_player = players[String(randi() % players.size())]
+	
+	randomize()
 	text_display.bbcode_text = "[center]" + get_task() + "[/center]"
 	name_display.text = acting_player.get("name")
 
 func get_task():
-	acting_player = players[String(randi() % players.size())]
+	
 	var task = check_task(acting_player.get("sex"), acting_player.get("level"))
 	
 	while task == null:
@@ -108,3 +111,16 @@ func check_task(sex, level):
 		return valid_task
 	else:
 		return null
+
+
+func _on_done_yes_pressed():
+	acting_player.level += 1
+	print(acting_player)
+	new_player()
+
+
+func _on_done_no_pressed():
+	if acting_player.level > 0:
+		acting_player.level -= 1
+	print(acting_player)
+	new_player()
