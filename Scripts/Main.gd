@@ -1,5 +1,9 @@
 extends Control
 
+onready var text_display = get_node("CenterContainer/RichTextLabel")
+onready var name_display = get_node("Name")
+
+var acting_player
 
 var tasks = {
 	"0" : {
@@ -50,15 +54,14 @@ var players = {
 func _ready():
 	randomize()
 	
-	
-	print(get_task())
-	print(get_task())
-	print(get_task())
-	print(get_task())
-	print(get_task())
+	new_player()
+
+func new_player():
+	text_display.bbcode_text = "[center]" + get_task() + "[/center]"
+	name_display.text = acting_player.get("name")
 
 func get_task():
-	var acting_player = players[String(randi() % players.size())]
+	acting_player = players[String(randi() % players.size())]
 	var task = check_task(acting_player.get("sex"), acting_player.get("level"))
 	
 	while task == null:
@@ -96,7 +99,6 @@ func get_task():
 		print(acting_player.get("name"))
 		return(task)
 	
-	print(acting_player.get("name"))
 	return(task.get("task"))
 
 func check_task(sex, level):
