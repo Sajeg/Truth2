@@ -18,6 +18,9 @@ func _ready():
 
 func new_player():
 	acting_player = players[String(randi() % players.size())]
+	print(acting_player)
+	if acting_player.get("name") == null:
+		new_player()
 	
 	randomize()
 	text_display.bbcode_text = "[center]" + get_task() + "[/center]"
