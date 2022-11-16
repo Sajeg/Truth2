@@ -5,53 +5,13 @@ onready var name_display = get_node("Name")
 
 var acting_player
 
-var tasks = {
-	"0" : {
-		"task" : "Tanze einmal im Kreis",
-		"level" : 0,
-		"sex" : "female"
-	},
-	"1" : {
-		"task" : "Mache 10 Liegestützen",
-		"level" : 0,
-		"sex" : "male"
-	},
-	"2" : {
-		"task" : "Erzähle eine peinliche Geschichte",
-		"level" : 0,
-		"sex" : "both"
-	},
-	"3" : {
-		"task" : "Küsse {male} auf die Wange",
-		"level" : 1,
-		"sex" : "female"
-	}
-}
+var tasks = Global.tasks
 
-var players = {
-	"0" : {
-		"name" : "Ole",
-		"sex" : "male",
-		"level" : 0
-	},
-	"1" : {
-		"name" : "Hans",
-		"sex" : "male",
-		"level" : 0
-	},
-	"2" : {
-		"name" : "Lisa",
-		"sex" : "female",
-		"level" : 0
-	},
-	"3" : {
-		"name" : "Frauke",
-		"sex" : "female",
-		"level" : 1
-	}
-}
+var players = Global.players
 
 func _ready():
+	
+	$transition/AnimationPlayer.play("fade_right_end")
 	randomize()
 	
 	new_player()
@@ -124,3 +84,9 @@ func _on_done_no_pressed():
 		acting_player.level -= 1
 	print(acting_player)
 	new_player()
+
+
+func _on_people_pressed():
+	$transition/AnimationPlayer.play("fade_left_start")
+	yield(get_tree().create_timer(0.5),"timeout")
+	get_tree().change_scene("res://Scenes/Player.tscn")
