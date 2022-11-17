@@ -9,7 +9,7 @@
 size = 150
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=7]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -23,8 +23,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=8]
 resource_name = "fade_left_end"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -38,8 +50,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -1000, -167 ), Vector2( -3000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=9]
 resource_name = "fade_left_start"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -53,8 +77,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1000, -167 ), Vector2( -1000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=10]
 resource_name = "fade_right_end"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -68,8 +104,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -1000, -167 ), Vector2( 1000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=11]
 resource_name = "fade_right_start"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -82,6 +130,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -3000, -167 ), Vector2( -1000, -167 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="Menu" type="Control"]
@@ -125,6 +185,13 @@ normal = ExtResource( 4 )
 
 [node name="transition" type="CanvasLayer" parent="."]
 
+[node name="Foreground" type="ColorRect" parent="transition"]
+margin_left = -220.0
+margin_top = -167.0
+margin_right = 899.0
+margin_bottom = 1335.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="ColorRect" type="ColorRect" parent="transition"]
 margin_left = 1000.0
 margin_top = -167.0
@@ -133,10 +200,10 @@ margin_bottom = 1833.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
-anims/RESET = SubResource( 1 )
-anims/fade_left_end = SubResource( 2 )
-anims/fade_left_start = SubResource( 3 )
-anims/fade_right_end = SubResource( 4 )
-anims/fade_right_start = SubResource( 5 )
+anims/RESET = SubResource( 7 )
+anims/fade_left_end = SubResource( 8 )
+anims/fade_left_start = SubResource( 9 )
+anims/fade_right_end = SubResource( 10 )
+anims/fade_right_start = SubResource( 11 )
 
 [connection signal="pressed" from="Back/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

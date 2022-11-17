@@ -94,3 +94,12 @@ func _on_people_pressed():
 		pass
 	else:
 		print("error loading Scene")
+
+
+func _on_TouchScreenButton_pressed():
+	$transition/AnimationPlayer.play("fade_right_start")
+	yield(get_tree().create_timer(0.6),"timeout")
+	if get_tree().change_scene("res://Scenes/Menu.tscn") == OK:
+		pass
+	else:
+		print("error loading Scene")

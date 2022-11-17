@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
@@ -6,12 +6,14 @@
 [ext_resource path="res://Assets/Fonts/standart.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=5]
 [ext_resource path="res://Assets/icons/bars-solid.png" type="Texture" id=6]
+[ext_resource path="res://Assets/icons/xmark-solid.png" type="Texture" id=7]
+[ext_resource path="res://Assets/icons/check-solid.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -25,8 +27,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "fade_left_end"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -40,8 +54,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -1000, -167 ), Vector2( -3000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "fade_left_start"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -55,8 +81,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1000, -167 ), Vector2( -1000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "fade_right_end"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -70,8 +108,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -1000, -167 ), Vector2( 1000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "fade_right_start"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -84,6 +134,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -3000, -167 ), Vector2( -1000, -167 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="Control" type="Control"]
@@ -137,6 +199,7 @@ margin_right = 20.0
 margin_bottom = -110.0
 
 [node name="Done\?" type="Label" parent="done"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -149,43 +212,35 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "Erledigt?"
 
-[node name="Yes" type="Label" parent="done"]
+[node name="Yes" type="Control" parent="done"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 130.0
-margin_top = 60.0
-margin_right = 200.0
-margin_bottom = 139.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 4 )
-text = "Ja"
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 50.0
+margin_bottom = 59.0
 
 [node name="yes" type="TouchScreenButton" parent="done/Yes"]
-position = Vector2( -50, -23 )
-scale = Vector2( 1.97917, 1.57812 )
-normal = ExtResource( 5 )
+position = Vector2( 80, 20 )
+scale = Vector2( 0.2, 0.2 )
+normal = ExtResource( 8 )
 
-[node name="No" type="Label" parent="done"]
-margin_left = -150.0
-margin_top = 80.0
-margin_right = -109.0
-margin_bottom = 118.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 4 )
-text = "Nein"
+[node name="No" type="Control" parent="done"]
+margin_right = 41.0
+margin_bottom = 38.0
 
 [node name="no" type="TouchScreenButton" parent="done/No"]
-position = Vector2( -70, -28 )
-scale = Vector2( 1.80208, 1.375 )
-normal = ExtResource( 5 )
+position = Vector2( -70, 20 )
+scale = Vector2( -0.2, 0.2 )
+normal = ExtResource( 7 )
 
-[node name="Control" type="Control" parent="."]
+[node name="Menu" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Menu"]
 position = Vector2( 40, 35 )
 scale = Vector2( 0.1, 0.1 )
 normal = ExtResource( 6 )
@@ -206,23 +261,28 @@ texture = ExtResource( 3 )
 
 [node name="transition" type="CanvasLayer" parent="."]
 
+[node name="Foreground" type="ColorRect" parent="transition"]
+margin_left = -220.0
+margin_top = -167.0
+margin_right = 899.0
+margin_bottom = 1335.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="ColorRect" type="ColorRect" parent="transition"]
 margin_left = 1000.0
 margin_top = -167.0
 margin_right = 3500.0
 margin_bottom = 1833.0
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
-anims/RESET = SubResource( 3 )
-anims/fade_left_end = SubResource( 4 )
-anims/fade_left_start = SubResource( 5 )
-anims/fade_right_end = SubResource( 6 )
-anims/fade_right_start = SubResource( 7 )
+anims/RESET = SubResource( 2 )
+anims/fade_left_end = SubResource( 3 )
+anims/fade_left_start = SubResource( 4 )
+anims/fade_right_end = SubResource( 5 )
+anims/fade_right_start = SubResource( 6 )
 
 [connection signal="pressed" from="done/Yes/yes" to="." method="_on_done_yes_pressed"]
 [connection signal="pressed" from="done/No/no" to="." method="_on_done_no_pressed"]
+[connection signal="pressed" from="Menu/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
 [connection signal="pressed" from="Icon/TouchScreenButton" to="." method="_on_people_pressed"]

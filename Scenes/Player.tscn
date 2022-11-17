@@ -24,6 +24,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "fade_left_end"
@@ -38,6 +50,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -1000, -167 ), Vector2( -3000, -167 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -54,6 +78,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1000, -167 ), Vector2( -1000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "fade_right_end"
@@ -69,6 +105,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -1000, -167 ), Vector2( 1000, -167 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "fade_right_start"
@@ -83,6 +131,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -3000, -167 ), Vector2( -1000, -167 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Foreground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="Player" type="Control"]
@@ -150,15 +210,19 @@ normal = ExtResource( 4 )
 
 [node name="transition" type="CanvasLayer" parent="."]
 
+[node name="Foreground" type="ColorRect" parent="transition"]
+margin_left = -220.0
+margin_top = -167.0
+margin_right = 899.0
+margin_bottom = 1335.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="ColorRect" type="ColorRect" parent="transition"]
 margin_left = 1000.0
 margin_top = -167.0
 margin_right = 3500.0
 margin_bottom = 1833.0
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
 anims/RESET = SubResource( 2 )

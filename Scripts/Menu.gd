@@ -1,5 +1,7 @@
 extends Control
 
+func _ready():
+	$transition/AnimationPlayer.play("fade_left_end")
 
 
 func _on_TouchScreenButton_pressed():
