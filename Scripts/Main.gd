@@ -17,8 +17,8 @@ func _ready():
 	new_player()
 
 func new_player():
-	acting_player = players[String(randi() % players.size())]
-	print(acting_player)
+	acting_player = players[randi() % players.size()]
+	
 	if acting_player.get("name") == null:
 		new_player()
 	
@@ -38,38 +38,38 @@ func get_task():
 	if "{both}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		task = task.get("task").format({"both" : players[String(player_number)].get("name")})
+		task = task.get("task").format({"both" : players[player_number].get("name")})
 		
-		print(acting_player.get("name"))
+		
 		return(task)
 	
 	if "{male}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		while players[String(player_number)].get("sex") != "male":
+		while players[player_number].get("sex") != "male":
 			player_number = randi() % players.size()
 		
-		task = task.get("task").format({"male" : players[String(player_number)].get("name")})
+		task = task.get("task").format({"male" : players[player_number].get("name")})
 		
-		print(acting_player.get("name"))
+		
 		return(task)
 	
 	if "{female}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		while players[String(player_number)].get("sex") != "female":
+		while players[player_number].get("sex") != "female":
 			player_number = randi() % players.size()
 		
-		task = task.get("task").format({"female" : players[String(player_number)].get("name")})
+		task = task.get("task").format({"female" : players[player_number].get("name")})
 		
-		print(acting_player.get("name"))
+		
 		return(task)
 	
 	return(task.get("task"))
 
 func check_task(sex, level):
 	var task_number = randi() % tasks.size()
-	var valid_task = tasks[String(task_number)]
+	var valid_task = tasks[task_number]
 	if (valid_task.get("sex") == sex or valid_task.get("sex") == "both") and (level >= valid_task.get("level")):
 		return valid_task
 	else:
@@ -78,18 +78,19 @@ func check_task(sex, level):
 
 func _on_done_yes_pressed():
 	acting_player.level += 1
-	print(acting_player)
 	new_player()
 
 
 func _on_done_no_pressed():
 	if acting_player.level > 0:
 		acting_player.level -= 1
-	print(acting_player)
 	new_player()
 
 
 func _on_people_pressed():
 	$transition/AnimationPlayer.play("fade_left_start")
 	yield(get_tree().create_timer(0.5),"timeout")
-	get_tree().change_scene("res://Scenes/Player.tscn")
+	if get_tree().change_scene("res://Scenes/Player.tscn") == OK:
+		pass
+	else:
+		print("error loading Scene")

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icons8-back-96.png-b37c82b5fefe655ad8b74e2112b8d7fb.stex"
+path="res://.import/right-angle-arrow-bold-icon.png-69b8f43a275294a402fa63a3e879079c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons8-back-96.png"
-dest_files=[ "res://.import/icons8-back-96.png-b37c82b5fefe655ad8b74e2112b8d7fb.stex" ]
+source_file="res://Assets/icons/right-angle-arrow-bold-icon.png"
+dest_files=[ "res://.import/right-angle-arrow-bold-icon.png-69b8f43a275294a402fa63a3e879079c.stex" ]
 
 [params]
 

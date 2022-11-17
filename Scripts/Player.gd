@@ -7,12 +7,12 @@ func _ready():
 	
 	for i in Global.players.size():
 		
-		if Global.players[String(i)].get("name") != null:
+		if Global.players[i].get("name") != null:
 			var label = Label.new()
 			
 			VBox.add_child(label)
-			label.name = Global.players[String(i)].get("name")
-			label.text = Global.players[String(i)].get("name")
+			label.name = Global.players[i].get("name")
+			label.text = Global.players[i].get("name")
 			label.add_font_override("font", load("res://Assets/Fonts/standart.tres"))
 			label.align = label.ALIGN_CENTER
 			label.add_color_override("font_color", Color.black)
@@ -29,10 +29,23 @@ func _ready():
 func _on_back_pressed():
 	$transition/AnimationPlayer.play("fade_right_start")
 	yield(get_tree().create_timer(0.5),"timeout")
-	get_tree().change_scene("res://Scenes/Main.tscn")
+	if get_tree().change_scene("res://Scenes/Main.tscn") == OK:
+		pass
+	else:
+		print("Error changing Scene")
 
 func delete_player(player):
 	
-	get_node("VBoxContainer/" + Global.players[String(player)].get("name")).queue_free()
-	Global.players[String(player)].name = null
+	get_node("VBoxContainer/" + Global.players[player].get("name")).queue_free()
+	Global.players[player] = Global.players[Global.players.size() -1]
+	Global.players.erase(Global.players.size() -1)
 	print("delted player")
+
+
+func _on_AddButton_pressed():
+	$transition/AnimationPlayer.play("fade_left_start")
+	yield(get_tree().create_timer(0.5),"timeout")
+	if get_tree().change_scene("res://Scenes/AddPlayer.tscn") == OK:
+		pass
+	else:
+		print("Error changing scene")
