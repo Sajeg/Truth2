@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/icons/employees-icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/icons/users-solid.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/standart.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=5]
+[ext_resource path="res://Assets/icons/bars-solid.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
@@ -180,6 +181,15 @@ position = Vector2( -70, -28 )
 scale = Vector2( 1.80208, 1.375 )
 normal = ExtResource( 5 )
 
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
+position = Vector2( 40, 35 )
+scale = Vector2( 0.1, 0.1 )
+normal = ExtResource( 6 )
+
 [node name="Icon" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -189,9 +199,9 @@ position = Vector2( -150, -2 )
 scale = Vector2( 1.65625, 2 )
 normal = ExtResource( 5 )
 
-[node name="Employees-icon" type="Sprite" parent="Icon"]
-position = Vector2( -80, 50 )
-scale = Vector2( 0.15, 0.15 )
+[node name="Users-solid" type="Sprite" parent="Icon"]
+position = Vector2( -80, 70 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
 
 [node name="transition" type="CanvasLayer" parent="."]
@@ -202,6 +212,9 @@ margin_top = -167.0
 margin_right = 3500.0
 margin_bottom = 1833.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
 anims/RESET = SubResource( 3 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hamburger-menu-icon.png-6d72ea2a1c341652d77081b3002c3b3e.stex"
+path="res://.import/plus-solid.png-910ccb2e3b65c2ced34fa99fec32b4c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/hamburger-menu-icon.png"
-dest_files=[ "res://.import/hamburger-menu-icon.png-6d72ea2a1c341652d77081b3002c3b3e.stex" ]
+source_file="res://Assets/icons/plus-solid.png"
+dest_files=[ "res://.import/plus-solid.png-910ccb2e3b65c2ced34fa99fec32b4c7.stex" ]
 
 [params]
 

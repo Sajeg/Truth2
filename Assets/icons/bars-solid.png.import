@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/employees-icon.png-7702986a3ac0ab624d7f762fa44fe952.stex"
+path="res://.import/bars-solid.png-77a4bfb098203455a66efb3295527fe7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/employees-icon.png"
-dest_files=[ "res://.import/employees-icon.png-7702986a3ac0ab624d7f762fa44fe952.stex" ]
+source_file="res://Assets/icons/bars-solid.png"
+dest_files=[ "res://.import/bars-solid.png-77a4bfb098203455a66efb3295527fe7.stex" ]
 
 [params]
 

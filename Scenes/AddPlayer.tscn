@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/AddPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/frameB.png" type="Texture" id=3]
-[ext_resource path="res://Assets/icons/right-angle-arrow-bold-icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/icons/angle-right-solid.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=6]
 size = 110
