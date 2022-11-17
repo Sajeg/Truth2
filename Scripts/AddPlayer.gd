@@ -23,7 +23,7 @@ func _on_TouchScreenButton_pressed():
 		$EnterName.visible = false
 		$SelectSex.visible = true
 		$transition/AnimationPlayer.play("fade_left_end")
-	elif add_name != null:
+	elif (add_name != null) and (String($SelectSex/ItemList.get_selected_items()) != String([])):
 		$transition/AnimationPlayer.play("fade_left_start")
 		yield(get_tree().create_timer(0.6),"timeout")
 		sex = $SelectSex/ItemList.get_selected_items()[0]

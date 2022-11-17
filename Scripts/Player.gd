@@ -4,7 +4,13 @@ onready var VBox = get_node("VBoxContainer")
 
 func _ready():
 	$transition/AnimationPlayer.play("fade_left_end")
-	
+	player_list()
+
+
+func player_list():
+	for n in VBox.get_children():
+		VBox.remove_child(n)
+		n.queue_free()
 	for i in Global.players.size():
 		
 		if Global.players[i].get("name") != null:
@@ -25,7 +31,6 @@ func _ready():
 			button.scale.y = 0.8
 			button.connect("pressed", self, "delete_player", [i])
 
-
 func _on_back_pressed():
 	$transition/AnimationPlayer.play("fade_right_start")
 	yield(get_tree().create_timer(0.6),"timeout")
@@ -36,9 +41,10 @@ func _on_back_pressed():
 
 func delete_player(player):
 	
-	get_node("VBoxContainer/" + Global.players[player].get("name")).queue_free()
+	#get_node("VBoxContainer/" + Global.players[player].get("name")).queue_free()
 	Global.players[player] = Global.players[Global.players.size() -1]
 	Global.players.erase(Global.players.size() -1)
+	player_list()
 	print("delted player")
 
 
