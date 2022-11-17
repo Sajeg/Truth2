@@ -28,7 +28,7 @@ func _ready():
 
 func _on_back_pressed():
 	$transition/AnimationPlayer.play("fade_right_start")
-	yield(get_tree().create_timer(0.5),"timeout")
+	yield(get_tree().create_timer(0.6),"timeout")
 	if get_tree().change_scene("res://Scenes/Main.tscn") == OK:
 		pass
 	else:
@@ -44,7 +44,7 @@ func delete_player(player):
 
 func _on_AddButton_pressed():
 	$transition/AnimationPlayer.play("fade_left_start")
-	yield(get_tree().create_timer(0.5),"timeout")
+	yield(get_tree().create_timer(0.6),"timeout")
 	if get_tree().change_scene("res://Scenes/AddPlayer.tscn") == OK:
 		pass
 	else:

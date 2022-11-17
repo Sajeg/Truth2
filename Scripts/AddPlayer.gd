@@ -14,7 +14,7 @@ func _on_TouchScreenButton_pressed():
 	if (add_name == null) and ($EnterName/LineEdit.text != ""):
 		
 		$transition/AnimationPlayer.play("fade_left_start")
-		yield(get_tree().create_timer(0.5),"timeout")
+		yield(get_tree().create_timer(0.6),"timeout")
 
 		add_name = $EnterName/LineEdit.text
 
@@ -25,7 +25,7 @@ func _on_TouchScreenButton_pressed():
 		$transition/AnimationPlayer.play("fade_left_end")
 	elif add_name != null:
 		$transition/AnimationPlayer.play("fade_left_start")
-		yield(get_tree().create_timer(0.5),"timeout")
+		yield(get_tree().create_timer(0.6),"timeout")
 		sex = $SelectSex/ItemList.get_selected_items()[0]
 		
 		
