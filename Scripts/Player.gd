@@ -13,12 +13,12 @@ func player_list():
 		n.queue_free()
 	for i in Global.players.size():
 		
-		if Global.players[i].get("name") != null:
+		if Global.players[String(i)].get("name") != null:
 			var label = Label.new()
 			
 			VBox.add_child(label)
-			label.name = Global.players[i].get("name")
-			label.text = Global.players[i].get("name")
+			label.name = Global.players[String(i)].get("name")
+			label.text = Global.players[String(i)].get("name")
 			label.add_font_override("font", load("res://Assets/Fonts/standart.tres"))
 			label.align = label.ALIGN_CENTER
 			label.add_color_override("font_color", Color.black)
@@ -43,8 +43,8 @@ func delete_player(player):
 	if Global.players.size() == 1:
 		return
 	
-	Global.players[player] = Global.players[Global.players.size() -1]
-	Global.players.erase(Global.players.size() -1)
+	Global.players[String(player)] = Global.players[String(Global.players.size() -1)]
+	Global.players.erase(String(Global.players.size() -1))
 	player_list()
 	print("delted player")
 

@@ -19,17 +19,18 @@ func _ready():
 		$downloading.visible = true
 		yield(get_node("HTTPRequest"), "request_completed")
 		$downloading.visible = false
+		
 		file.open("res://truth.json",File.READ)
-		Global.truth = file.get_as_text()
+		Global.truth = JSON.parse(file.get_as_text()).result
 		file.close()
 		
 		file.open(path_truth,File.WRITE)
-		file.store_var(Global.truth)
+		file.store_line(to_json(Global.truth))
 		file.close()
 		
 	elif file.file_exists(path_truth):
 		file.open(path_truth,File.READ)
-		Global.truth = file.get_as_text()
+		Global.truth = JSON.parse(file.get_as_text()).result
 		file.close()
 	
 	if not file.file_exists(path_dare):
@@ -37,25 +38,28 @@ func _ready():
 		$downloading.visible = true
 		yield(get_node("HTTPRequest"), "request_completed")
 		$downloading.visible = false
+
 		file.open("res://dare.json",File.READ)
-		Global.dare = file.get_as_text()
+		Global.dare = parse_json(file.get_as_text())
 		file.close()
-	elif file.file_exists(path_dare):
-		file.open(path_dare,File.READ)
-		Global.dare = file.get_as_text()
+
+		file.open(path_dare,File.WRITE)
+		file.store_line(to_json(Global.dare))
 		file.close()
 		
-		file.open(path_dare,File.WRITE)
-		file.store_var(Global.dare)
+	elif file.file_exists(path_dare):
+		file.open(path_dare,File.READ)
+		Global.dare = parse_json(file.get_as_text())
 		file.close()
 	
+
 	$transition/AnimationPlayer.play("fade_right_end")
 	randomize()
 	
 	new_player()
 
 func new_player():
-	acting_player = players[randi() % players.size()]
+	acting_player = players[String(randi() % players.size())]
 	
 	if acting_player.get("name") == null:
 		new_player()
@@ -65,7 +69,7 @@ func new_player():
 	name_display.text = acting_player.get("name")
 
 func get_task():
-	
+	tasks = Global.truth
 	var task = check_task(acting_player.get("sex"), acting_player.get("level"))
 	
 	while task == null:
@@ -76,10 +80,9 @@ func get_task():
 	if "{both}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		while String(acting_player.get("name")) == String(player_number.get("name")):
-			player_number = randi() % players.size()
+
 		
-		task = task.get("task").format({"both" : players[player_number].get("name")})
+		task = task.get("task").format({"both" : players[String(player_number)].get("name")})
 		
 		
 		return(task)
@@ -87,10 +90,10 @@ func get_task():
 	if "{male}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		while (players[player_number].get("sex") != "male") or (String(acting_player.get("name")) == String(player_number.get("name"))):
+		while (players[String(player_number)].get("sex") != "male"):
 			player_number = randi() % players.size()
 		
-		task = task.get("task").format({"male" : players[player_number].get("name")})
+		task = task.get("task").format({"male" : players[String(player_number)].get("name")})
 		
 		
 		return(task)
@@ -98,10 +101,10 @@ func get_task():
 	if "{female}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		while (players[player_number].get("sex") != "female") or (String(acting_player.get("name")) == String(player_number.get("name"))):
+		while (players[String(player_number)].get("sex") != "female"):
 			player_number = randi() % players.size()
 		
-		task = task.get("task").format({"female" : players[player_number].get("name")})
+		task = task.get("task").format({"female" : players[String(player_number)].get("name")})
 		
 		
 		return(task)
@@ -110,7 +113,7 @@ func get_task():
 
 func check_task(sex, level):
 	var task_number = randi() % tasks.size()
-	var valid_task = tasks[task_number]
+	var valid_task = tasks[String(task_number)]
 	if (valid_task.get("sex") == sex or valid_task.get("sex") == "both") and (level >= valid_task.get("level")):
 		return valid_task
 	else:
