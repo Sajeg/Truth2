@@ -12,3 +12,5 @@ data_*/
 
 # Custom ignores
 .vscode/launch.json
+dare.json
+truth.json
