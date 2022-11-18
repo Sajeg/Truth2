@@ -1,0 +1,22 @@
+{
+	0 : {
+		"task" : "Tanze einmal im Kreis mit {female}",
+		"level" : 0,
+		"sex" : "female"
+	},
+	1 : {
+		"task" : "Mache 10 Liegestützen",
+		"level" : 0,
+		"sex" : "male"
+	},
+	2 : {
+		"task" : "Erzähle eine peinliche Geschichte",
+		"level" : 0,
+		"sex" : "both"
+	},
+	3 : {
+		"task" : "Küsse {male} auf die Wange",
+		"level" : 1,
+		"sex" : "female"
+	}
+}
