@@ -20,7 +20,7 @@ func _ready():
 		yield(get_node("HTTPRequest"), "request_completed")
 		$downloading.visible = false
 		
-		file.open("res://truth.json",File.READ)
+		file.open(path_truth,File.READ)
 		Global.truth = JSON.parse(file.get_as_text()).result
 		file.close()
 		
@@ -39,7 +39,7 @@ func _ready():
 		yield(get_node("HTTPRequest"), "request_completed")
 		$downloading.visible = false
 
-		file.open("res://dare.json",File.READ)
+		file.open(path_dare,File.READ)
 		Global.dare = parse_json(file.get_as_text())
 		file.close()
 
@@ -122,7 +122,10 @@ func check_task(sex, level):
 func download(file):
 	var request = get_node("HTTPRequest")
 	
-	request.set_download_file(file + ".json")
+	if file == "truth":
+		request.set_download_file(path_truth)
+	elif file == "dare":
+		request.set_download_file(path_dare)
 	request.request(Global.download_task_url + file +".json")
 
 
