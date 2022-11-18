@@ -1,8 +1,9 @@
 extends Node
 
-var tasks = {
+var dare = {}
+var truth = {
 	0 : {
-		"task" : "Tanze einmal im Kreis",
+		"task" : "Tanze einmal im Kreis mit {female}",
 		"level" : 0,
 		"sex" : "female"
 	},
@@ -45,3 +46,5 @@ var players = {
 		"level" : 1
 	}
 }
+
+var download_task_url = "https://raw.githubusercontent.com/Sajeg/Truth2/main/tasks/"

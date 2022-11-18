@@ -1,0 +1,22 @@
+{
+	0 : {
+		"task" : "Erzähle wenn du schon mal umgezogen bist, wo du früher gewohnt hast.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	1 : {
+		"task" : "Erzähle von deinem ersten crush.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	2 : {
+		"task" : "truth1",
+		"level" : 0,
+		"sex" : "both"
+	},
+	3 : {
+		"task" : "truth2",
+		"level" : 1,
+		"sex" : "female"
+	}
+}

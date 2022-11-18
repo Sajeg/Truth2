@@ -40,8 +40,9 @@ func _on_back_pressed():
 		print("Error changing Scene")
 
 func delete_player(player):
+	if Global.players.size() == 1:
+		return
 	
-	#get_node("VBoxContainer/" + Global.players[player].get("name")).queue_free()
 	Global.players[player] = Global.players[Global.players.size() -1]
 	Global.players.erase(Global.players.size() -1)
 	player_list()

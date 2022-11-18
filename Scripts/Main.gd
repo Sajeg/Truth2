@@ -5,11 +5,49 @@ onready var name_display = get_node("Name")
 
 var acting_player
 
-var tasks = Global.tasks
+var tasks = Global.truth
 
 var players = Global.players
+var path_truth = "user://truth.json"
+var path_dare = "user://dare.json"
+
 
 func _ready():
+	var file = File.new()
+	if not file.file_exists(path_truth):
+		download("truth")
+		$downloading.visible = true
+		yield(get_node("HTTPRequest"), "request_completed")
+		$downloading.visible = false
+		file.open("res://truth.json",File.READ)
+		Global.truth = file.get_as_text()
+		file.close()
+		
+		file.open(path_truth,File.WRITE)
+		file.store_var(Global.truth)
+		file.close()
+		
+	elif file.file_exists(path_truth):
+		file.open(path_truth,File.READ)
+		Global.truth = file.get_as_text()
+		file.close()
+	
+	if not file.file_exists(path_dare):
+		download("dare")
+		$downloading.visible = true
+		yield(get_node("HTTPRequest"), "request_completed")
+		$downloading.visible = false
+		file.open("res://dare.json",File.READ)
+		Global.dare = file.get_as_text()
+		file.close()
+	elif file.file_exists(path_dare):
+		file.open(path_dare,File.READ)
+		Global.dare = file.get_as_text()
+		file.close()
+		
+		file.open(path_dare,File.WRITE)
+		file.store_var(Global.dare)
+		file.close()
 	
 	$transition/AnimationPlayer.play("fade_right_end")
 	randomize()
@@ -38,6 +76,9 @@ func get_task():
 	if "{both}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
+		while String(acting_player.get("name")) == String(player_number.get("name")):
+			player_number = randi() % players.size()
+		
 		task = task.get("task").format({"both" : players[player_number].get("name")})
 		
 		
@@ -46,7 +87,7 @@ func get_task():
 	if "{male}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		while players[player_number].get("sex") != "male":
+		while (players[player_number].get("sex") != "male") or (String(acting_player.get("name")) == String(player_number.get("name"))):
 			player_number = randi() % players.size()
 		
 		task = task.get("task").format({"male" : players[player_number].get("name")})
@@ -57,7 +98,7 @@ func get_task():
 	if "{female}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		while players[player_number].get("sex") != "female":
+		while (players[player_number].get("sex") != "female") or (String(acting_player.get("name")) == String(player_number.get("name"))):
 			player_number = randi() % players.size()
 		
 		task = task.get("task").format({"female" : players[player_number].get("name")})
@@ -74,6 +115,12 @@ func check_task(sex, level):
 		return valid_task
 	else:
 		return null
+
+func download(file):
+	var request = get_node("HTTPRequest")
+	
+	request.set_download_file(file + ".json")
+	request.request(Global.download_task_url + file +".json")
 
 
 func _on_done_yes_pressed():
@@ -103,3 +150,7 @@ func _on_TouchScreenButton_pressed():
 		pass
 	else:
 		print("error loading Scene")
+
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	print("Request completed ", result, ", ", response_code)

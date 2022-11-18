@@ -13,11 +13,16 @@ func _ready():
 func _on_TouchScreenButton_pressed():
 	if (add_name == null) and ($EnterName/LineEdit.text != ""):
 		
+		add_name = $EnterName/LineEdit.text
+		
+		for n in Global.players.size():
+			if Global.players[n].get("name") == add_name:
+				add_name = null
+				return
+		
 		$transition/AnimationPlayer.play("fade_left_start")
 		yield(get_tree().create_timer(0.6),"timeout")
-
-		add_name = $EnterName/LineEdit.text
-
+		
 		$Name.text = "Geschlecht"
 		$Name.get_font("font").set_size(110)
 		$EnterName.visible = false

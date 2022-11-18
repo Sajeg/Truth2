@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1000, -167 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Foreground:visible")
+tracks/1/path = NodePath("../Foreground:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -55,7 +55,7 @@ tracks/0/keys = {
 "values": [ Vector2( -1000, -167 ), Vector2( -3000, -167 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Foreground:visible")
+tracks/1/path = NodePath("../Foreground:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -82,7 +82,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1000, -167 ), Vector2( -1000, -167 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Foreground:visible")
+tracks/1/path = NodePath("../Foreground:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -109,7 +109,7 @@ tracks/0/keys = {
 "values": [ Vector2( -1000, -167 ), Vector2( 1000, -167 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Foreground:visible")
+tracks/1/path = NodePath("../Foreground:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -136,7 +136,7 @@ tracks/0/keys = {
 "values": [ Vector2( -3000, -167 ), Vector2( -1000, -167 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Foreground:visible")
+tracks/1/path = NodePath("../Foreground:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -259,14 +259,14 @@ position = Vector2( -80, 70 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
 
-[node name="transition" type="CanvasLayer" parent="."]
-
-[node name="Foreground" type="ColorRect" parent="transition"]
+[node name="Foreground" type="ColorRect" parent="."]
 margin_left = -220.0
 margin_top = -167.0
 margin_right = 899.0
 margin_bottom = 1335.0
 color = Color( 0, 0, 0, 1 )
+
+[node name="transition" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="transition"]
 margin_left = 1000.0
@@ -282,7 +282,23 @@ anims/fade_left_start = SubResource( 4 )
 anims/fade_right_end = SubResource( 5 )
 anims/fade_right_start = SubResource( 6 )
 
+[node name="downloading" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -139.0
+margin_top = -25.0
+margin_right = 139.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 4 )
+text = "Downloading..."
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="done/Yes/yes" to="." method="_on_done_yes_pressed"]
 [connection signal="pressed" from="done/No/no" to="." method="_on_done_no_pressed"]
 [connection signal="pressed" from="Menu/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
 [connection signal="pressed" from="Icon/TouchScreenButton" to="." method="_on_people_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
