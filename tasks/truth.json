@@ -1,22 +1,257 @@
 {
 	"0" : {
-		"task" : "Erzähle wenn du schon mal umgezogen bist, wo du früher gewohnt hast.",
-		"level" : 0,
+		"task" : "Wer ist dein Crush?",
+		"level" : 3,
 		"sex" : "both"
 	},
 	"1" : {
-		"task" : "Erzähle von deinem ersten crush.",
-		"level" : 0,
+		"task" : "Was ist deine tiefste, dunkelste Angst?",
+		"level" : 1,
 		"sex" : "both"
 	},
 	"2" : {
-		"task" : "truth1",
-		"level" : 0,
+		"task" : "Wer ist die heißeste Person hier?",
+		"level" : 4,
 		"sex" : "both"
 	},
 	"3" : {
-		"task" : "truth2",
+		"task" : "Was ist deine größte Reue?",
 		"level" : 1,
+		"sex" : "both"
+	},
+	"4" : {
+		"task" : "Wer hier hat den schönsten Hintern?",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"5" : {
+		"task" : "Welche drei Dinge machen dich am meisten an?",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"6" : {
+		"task" : "Was ist dein größter Fetisch?",
+		"level" : 3,
+		"sex" :"both"
+	},
+	"7" : {
+		"task" : "Was ist dein größter Traum?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"8" : {
+		"task" : "Was ist dein größter Albtraum?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"9" : {
+		"task" : "Womit an dir fühlst du dich am meisten unwohl?",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"10" : {
+		"task" : "Was ist das Schlimmste, das dir passieren kann?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"11" : {
+		"task" : "Was ist das Beste, was dir passieren kann?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"12" : {
+		"task" : "Was ist das peinlichste Foto von dir?",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"13" : {
+		"task" : "Was ist das peinlichste, was du jemals getan hast?",
+		"level" :2,
+		"sex" : "both"
+	},
+	"14" : {
+		"task" : "Was war deine peinlichste Kotzgeschichte?",
+		"level" :3,
+		"sex" : "both"
+	},
+	"15" : {
+		"task" : "Mit wem hier würdest du am liebsten mal herummachen?",
+		"level" : 4,
+		"sex" : "both"
+	},
+	"16" : {
+		"task" : "Was ist der teuerste Gegenstand, den du je gestohlen hast?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"17" : {
+		"task" : "Was hast du Schreckliches getan, das du mit Lügen zu vertuschen versucht hast?",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"18" : {
+		"task" : "Was ist das Schlimmste, was du jemals jemandem angetan hast?",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"19" : {
+		"task" : "Was ist deine größte Leidenschaft?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"20" : {
+		"task" : "Was ist deine größte Schwäche?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"21" : {
+		"task" : "Was ist deine größte Stärke?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"22" : {
+		"task" : "Wer hat die schönsten Brüste hier?",
+		"level" : 3,
+		"sex" : "male"
+	},
+	"23" : {
+		"task" : "Wer hat den schönsten Haare hier?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"24" : {
+		"task" : "Wer hat die schönsten Muskeln hier?",
+		"level" : 0,
 		"sex" : "female"
+	},
+	"25" : {
+		"task" : "Wer hat die schönsten Augen hier?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"26" : {
+		"task" : "Was ist das Ekligste, das du jemals im Mund gehabt hast?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"27" : {
+		"task" : "Was ist das Schlimmste, was du jemals gegessen hast?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"28" : {
+		"task" : "Was ist das Schlimmste, was du jemals getrunken hast?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"29" : {
+		"task" : "Was ist das Schlimmste, was du jemals gerochen hast?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"30" : {
+		"task" : "Wovon hoffst du wirklich sehr, dass es deine Eltern niemals herausfinden?",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"31" : {
+		"task" : "Was hast du getan, wofür die Leute hier dich am meisten verurteilen würden?",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"32" : {
+		"task" : "Bist du zur Zeit verliebt?",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"33" : {
+		"task" : "Stehst du auf Männer oder Frauen?",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"34" : {
+		"task" : "Wie viele Mädchen/Jungs hast du in deinem Leben geküsst?",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"35" : {
+		"task" : "Welche Person hat dich das letzte Mal gekorbt?",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"36" : {
+		"task" : "Hast du schonmal das Gesetz gebrochen?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"37" : {
+		"task" : "Nach was hast du als letztes gegoogelt?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"38" : {
+		"task" : "Was war das letzte Youtube-Video, das du dir angesehen hast?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"39" : {
+		"task" : "Welche Person hat deinen ersten Kuss bekommen?",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"40" : {
+		"task" : "Was hast du zuletzt geträumt?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"41" : {
+		"task" : "Du hast nur noch eine Stunde zu leben: Was tust du?",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"42" : {
+		"task" : "Du bist für einen Tag unsichtbar — was machst du?",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"43" : {
+		"task" : "In wen bist du zur Zeit verliebt?",
+		"level" : 4,
+		"sex" : "both"
+	},
+	"44" : {
+		"task" : "Wie viel jünger/ älter als du darf eine Person sein, die du datest?",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"45" : {
+		"task" : "Wer aus der Gruppe ist am stilvollsten gekleidet?",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"46" : {
+		"task" : "Was hast du gesagt, als du das letzte Mal gelogen hast?",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"47" : {
+		"task" : "Wann hast du das letzte Mal einen richtigen Kater gehabt?",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"48" : {
+		"task" : "An welchen Körperstellen bist du kitzlig?",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"49" : {
+		"task" : "Pinkelst du manchmal wenn du unter der Dusche stehst?",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"50" : {
+		"task" : "Mit was kann man dich am besten von sich begeistern?",
+		"level" : 1,
+		"sex" : "both"
 	}
 }

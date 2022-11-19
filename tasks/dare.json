@@ -1,22 +1,257 @@
 {
 	"0" : {
-		"task" : "Tanze einmal im Kreis mit {female}",
-		"level" : 0,
+		"task" : "Lass dir von {male} einen Klaps auf den Po geben.",
+		"level" : 3,
 		"sex" : "female"
 	},
 	"1" : {
-		"task" : "Mache 10 Liegestützen",
-		"level" : 0,
-		"sex" : "male"
+		"task" : "Küsse die Person zu deiner Linken.",
+		"level" : 5,
+		"sex" : "both"
 	},
 	"2" : {
-		"task" : "Erzähle eine peinliche Geschichte",
+		"task" : "Sprich die nächsten 3 Runden mit Akzent.",
 		"level" : 0,
 		"sex" : "both"
 	},
 	"3" : {
-		"task" : "Küsse {male} auf die Wange",
+		"task" : "Spiele 5 Minuten lang für {both} das Haustier.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"4" : {
+		"task" : "Lass dir von der Gruppe eine neue Frisur verpassen.",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"5" : {
+		"task" : "Tanze zu einem Lied, das {both} auswählt.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"6" : {
+		"task" : "Nimm in deinen Klamotten eine Dusche.",
+		"level" : 5,
+		"sex" : "both"
+	},
+	"7" : {
+		"task" : "Bauchtanze, als ob dein Leben davon abhängt.",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"8" : {
+		"task" : "Versuche, ein Glas Wasser zu trinken, während du auf den Händen stehst.",
 		"level" : 1,
-		"sex" : "female"
+		"sex" : "both"
+	},
+	"9" : {
+		"task" : "Lass dich von {both} in eine peinliche Pose setzen und ein Foto davon machen.",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"10" : {
+		"task" : "Gib einer Person hier dein Handy und lass ihn oder sie irgendeinem deiner Kontakte einen Text schicken.",
+		"level" : 4,
+		"sex" : "both"
+	},
+	"11" : {
+		"task" : "Lass dir von {both} ein Tatoo malen.",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"12" : {
+		"task" : "Lass dir von {both} mit einem Stift etwas auf dein Gesicht malen.",
+		"level" : 4,
+		"sex" : "both"
+	},
+	"13" : {
+		"task" : "Erkläre {both} deine Liebe.",
+		"level" : 4,
+		"sex" : "both"
+	},
+	"14" : {
+		"task" : "Verkaufe jemandem in der Gruppe ein Stück Müll. Setze deine besten Verkaufstaktiken ein.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"15" : {
+		"task" : "Tausche mit {both} für 10 Minuten ein Kleidungsstück eurer Wahl.",
+		"level" : 5,
+		"sex" : "both"
+	},
+	"16" : {
+		"task" : "Laufe auf deinen Händen von einem Ende des Raums bis zum anderen. Wenn nötig, kann jemand deine Beine festhalten.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"17" : {
+		"task" : "Lass dir von {both} ins Gesicht klatschen.",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"18" : {
+		"task" : "Nimm einen Mülleimer und forme mit den Händen einen Ring darüber. Die anderen der Gruppe müssen jetzt Müll durch deinen improvisierten Basketabfall-Ring werfen.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"19" : {
+		"task" : "Verfasse aus dem Stegreif ein Gedicht über etwas, das die Gruppe auswählt.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"20" : {
+		"task" : "Öffne eine Packung Knabberzeug oder Süßigkeiten nur mit dem Mund, ohne Einsatz von Händen oder Füßen.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"21" : {
+		"task" : "Beuge dich vornüber, so dass du zwischen deinen Beinen hindurch nach hinten guckst. Renne jetzt rückwärts, bis du jemanden mit dem Hintern anstupsen kannst.",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"22" : {
+		"task" : "Mach eine Person in der Gruppe deiner Wahl nach.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"23" : {
+		"task" : "Lass etwas in die Toilette fallen und greife dann hinein, um es wieder herauszuholen.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"24" : {
+		"task" : "Springe 1 volle Minute lang so hoch wie möglich auf und ab.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"25" : {
+		"task" : "Lass zwei Leute gleichzeitig einen angeleckten Finger in deine Ohren stecken.",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"26" : {
+		"task" : "Zeig uns deinen Google Suchverlauf.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"27" : {
+		"task" : "Mach 10 Liegestütze.",
+		"level" : 4,
+		"sex" : "both"
+	},
+	"28" : {
+		"task" : "Trink dein Getränk auf Ex aus.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"29" : {
+		"task" : "Mach wie Michael Jackson einen Moonwalk.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"30" : {
+		"task" : "Iss einen Esslöffel Senf.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"31" : {
+		"task" : "Lass dir von der Gruppe fünf Witze erzählen, ohne dabei zu lachen.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"32" : {
+		"task" : "Die Person links von dir darf die Fotogalerie auf deinem Handy durchschauen.",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"33" : {
+		"task" : "Lege dich mit geschlossenen Augen in die Mitte und lass dich von der ganzen Gruppe durchkitzeln.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"34" : {
+		"task" : "Grunze für 30 Sekunden wie ein Schwein, ohne dabei zu lachen.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"35" : {
+		"task" : "Füttere {both} drei Runden lang.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"36" : {
+		"task" : "Schicke einer Person, die nicht anwesend ist, ohne einen weiteren Kommentar ein Bild von deinen Füßen.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"37" : {
+		"task" : "Leg einen Catwalk Run wie bei Germany's Next Topmodel hin.",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"38" : {
+		"task" : "Geh auf alle Viere. Nun haut {female} auf deinen Hintern.",
+		"level" : 3,
+		"sex" : "male"
+	},
+	"39" : {
+		"task" : "Hauche {both} an den Hals.",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"40" : {
+		"task" : "Lass dir den Namen {both} auf den Arm schreiben.",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"41" : {
+		"task" : "Bewege dich als müsstest du ganz dringend auf das Klo!",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"42" : {
+		"task" : "Zeige den anderen Mitspieler welche Kanäle du auf YouTube abonniert hast.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"43" : {
+		"task" : "Verhalte dich wie das andere Geschlecht für die nächsten drei Runden.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"44" : {
+		"task" : "Tanze, ohne dass Musik dabei läuft.",
+		"level" : 1,
+		"sex" : "both"
+	},
+	"45" : {
+		"task" : "Umarme {both}.",
+		"level" : 2,
+		"sex" : "both"
+	},
+	"46" : {
+		"task" : "Stecke dir Eiswürfel in die Hose.",
+		"level" : 4,
+		"sex" : "both"
+	},
+	"47" : {
+		"task" : "Führe ein drei-minütiges Stand-Up-Comedy-Programm auf.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"48" : {
+		"task" : "Mache die lustigste Grimasse, die dir einfällt.",
+		"level" : 0,
+		"sex" : "both"
+	},
+	"49" : {
+		"task" : "Finde heraus, wessen Haare am besten riechen.",
+		"level" : 3,
+		"sex" : "both"
+	},
+	"50" : {
+		"task" : "Iss etwas, ohne deine Hände zur Hilfe zu nehmen.",
+		"level" : 0,
+		"sex" : "both"
 	}
 }

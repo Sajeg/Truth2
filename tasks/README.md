@@ -15,8 +15,8 @@ Bei dem Punkt task steht die Aufgabe, die die Person ausführen muss.
 
 Dannach das mindest Level. Das Level, einer Person erhöht sich, wenn die Person eine Aufgabe ausgeführt hat.
 ´´´
-Level 1 = sehr einfach
-Level 2 = einfach
+Level 0 = sehr einfach
+Level 1 = einfach
 Level 3 = mittel
 Level 4 = schwer
 Level 5 = sehr schwer
