@@ -11,7 +11,7 @@ var tasks = Global.truth
 var players = Global.players
 var path_truth = "user://truth.json"
 var path_dare = "user://dare.json"
-
+var last_player
 
 func _ready():
 	var file = File.new()
@@ -61,6 +61,8 @@ func _ready():
 
 func new_player():
 	acting_player = players[String(randi() % players.size())]
+	if acting_player == last_player:
+		new_player()
 	name_display.text = acting_player.get("name")
 	
 	mode_select.unselect_all()
@@ -83,7 +85,9 @@ func get_task(mode):
 	
 	if "{both}" in task.get("task"):
 		var player_number = randi() % players.size()
-		
+
+		while players[player_number].get("name") == acting_player.get("name"):
+			player_number = randi() % players.size()		
 
 		
 		task = task.get("task").format({"both" : players[String(player_number)].get("name")})
@@ -94,7 +98,7 @@ func get_task(mode):
 	if "{male}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		while (players[String(player_number)].get("sex") != "male"):
+		while (players[String(player_number)].get("sex") != "male") and (players[String(player_number)].get("name") == acting_player.get("name")):
 			player_number = randi() % players.size()
 		
 		task = task.get("task").format({"male" : players[String(player_number)].get("name")})
@@ -105,7 +109,7 @@ func get_task(mode):
 	if "{female}" in task.get("task"):
 		var player_number = randi() % players.size()
 		
-		while (players[String(player_number)].get("sex") != "female"):
+		while (players[String(player_number)].get("sex") != "female") and (players[String(player_number)].get("name") == acting_player.get("name")):
 			player_number = randi() % players.size()
 		
 		task = task.get("task").format({"female" : players[String(player_number)].get("name")})
