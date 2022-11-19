@@ -46,7 +46,6 @@ func _on_TruthButton_pressed():
         import = "truth"
 
 func _on_FileDialog_file_selected(path:String):
-    print(path)
     var file = File.new()
     if import == "dare":
         file.open(path,File.READ)

@@ -14,8 +14,6 @@ var path_dare = "user://dare.json"
 
 
 func _ready():
-	print(OS.SYSTEM_DIR_DOWNLOADS)
-
 	var file = File.new()
 	if not file.file_exists(path_truth):
 		download("truth")
@@ -75,7 +73,7 @@ func get_task(mode):
 	elif mode == "dare":
 		tasks = Global.dare
 	
-	print(tasks)
+
 	var task = check_task(acting_player.get("sex"), acting_player.get("level"))
 	
 	while task == null:
@@ -120,9 +118,9 @@ func get_task(mode):
 func check_task(sex, level):
 	var task_number = randi() % tasks.size()
 	var valid_task = tasks[String(task_number)]
-	print("checking task")
+
 	if (valid_task.get("sex") == sex or valid_task.get("sex") == "both") and (level >= valid_task.get("level")):
-		print(valid_task)
+		
 		return valid_task
 	else:
 		return check_task(sex,level)
