@@ -14,6 +14,8 @@ var path_dare = "user://dare.json"
 
 
 func _ready():
+	print(OS.SYSTEM_DIR_DOWNLOADS)
+
 	var file = File.new()
 	if not file.file_exists(path_truth):
 		download("truth")
@@ -166,7 +168,7 @@ func _on_TouchScreenButton_pressed():
 		print("error loading Scene")
 
 
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+func _on_HTTPRequest_request_completed(result, response_code, _headers, _body):
 	print("Request completed ", result, ", ", response_code)
 
 

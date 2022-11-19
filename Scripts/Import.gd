@@ -35,11 +35,13 @@ func _on_TouchScreenButton_pressed():
 
 func _on_DareButton_pressed():
     if OS.request_permissions() == true: 
+        $FileDialog.set_current_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS))
         $FileDialog.popup()
         import = "dare"
 
 func _on_TruthButton_pressed():
-    if OS.request_permissions() == true: 
+    if OS.request_permissions() == true:
+        $FileDialog.set_current_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS))
         $FileDialog.popup()
         import = "truth"
 

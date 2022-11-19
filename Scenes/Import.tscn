@@ -242,7 +242,7 @@ theme = ExtResource( 5 )
 window_title = "Open File to Import"
 mode = 0
 access = 2
-filters = PoolStringArray( ".json" )
+filters = PoolStringArray( "*.json; JSON" )
 
 [node name="Back" type="Control" parent="."]
 margin_right = 40.0
