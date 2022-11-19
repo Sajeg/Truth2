@@ -2,6 +2,7 @@ extends Control
 
 onready var text_display = get_node("CenterContainer/RichTextLabel")
 onready var name_display = get_node("Name")
+onready var mode_select = get_node("ModeSelect/ItemList2")
 
 var acting_player
 
@@ -55,21 +56,24 @@ func _ready():
 
 	$transition/AnimationPlayer.play("fade_right_end")
 	randomize()
-	
 	new_player()
+	
 
 func new_player():
 	acting_player = players[String(randi() % players.size())]
-	
-	if acting_player.get("name") == null:
-		new_player()
-	
-	randomize()
-	text_display.bbcode_text = "[center]" + get_task() + "[/center]"
 	name_display.text = acting_player.get("name")
+	
+	mode_select.unselect_all()
+	mode_select.visible = true
 
-func get_task():
-	tasks = Global.truth
+
+func get_task(mode):
+	if mode == "truth":
+		tasks = Global.truth
+	elif mode == "dare":
+		tasks = Global.dare
+	
+	print(tasks)
 	var task = check_task(acting_player.get("sex"), acting_player.get("level"))
 	
 	while task == null:
@@ -114,10 +118,12 @@ func get_task():
 func check_task(sex, level):
 	var task_number = randi() % tasks.size()
 	var valid_task = tasks[String(task_number)]
+	print("checking task")
 	if (valid_task.get("sex") == sex or valid_task.get("sex") == "both") and (level >= valid_task.get("level")):
+		print(valid_task)
 		return valid_task
 	else:
-		return null
+		return check_task(sex,level)
 
 func download(file):
 	var request = get_node("HTTPRequest")
@@ -131,12 +137,14 @@ func download(file):
 
 func _on_done_yes_pressed():
 	acting_player.level += 1
+	text_display.visible = false
 	new_player()
 
 
 func _on_done_no_pressed():
 	if acting_player.level > 0:
 		acting_player.level -= 1
+		text_display.visible = false
 	new_player()
 
 
@@ -160,3 +168,15 @@ func _on_TouchScreenButton_pressed():
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	print("Request completed ", result, ", ", response_code)
+
+
+func _on_ItemList2_item_selected(index):
+	mode_select.visible = false
+	if index == 0:
+		randomize()
+		text_display.bbcode_text = "[center]" + get_task("truth") + "[/center]"
+		text_display.visible = true
+	elif index == 1:
+		randomize()
+		text_display.bbcode_text = "[center]" + get_task("dare") + "[/center]"
+		text_display.visible = true

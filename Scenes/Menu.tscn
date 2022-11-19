@@ -191,12 +191,12 @@ margin_right = 541.0
 margin_bottom = 286.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 12 )
-text = "Import"
+text = "Tasks"
 align = 1
 valign = 1
 
 [node name="ImportButton" type="TouchScreenButton" parent="VBoxContainer/Import"]
-scale = Vector2( 4.91667, 1.125 )
+scale = Vector2( 5.27083, 1.125 )
 normal = ExtResource( 4 )
 
 [node name="Credits" type="Label" parent="VBoxContainer"]
@@ -210,7 +210,7 @@ align = 1
 valign = 1
 
 [node name="CreditsButton" type="TouchScreenButton" parent="VBoxContainer/Credits"]
-scale = Vector2( 4.91667, 1.125 )
+scale = Vector2( 5.27083, 1.125 )
 normal = ExtResource( 4 )
 
 [node name="Exit" type="Label" parent="VBoxContainer"]
@@ -224,7 +224,7 @@ align = 1
 valign = 1
 
 [node name="ExitButton" type="TouchScreenButton" parent="VBoxContainer/Exit"]
-scale = Vector2( 4.91667, 1.125 )
+scale = Vector2( 5.17708, 1.125 )
 normal = ExtResource( 4 )
 
 [node name="Credits1" type="Label" parent="VBoxContainer"]
@@ -307,6 +307,7 @@ anims/fade_left_start = SubResource( 9 )
 anims/fade_right_end = SubResource( 10 )
 anims/fade_right_start = SubResource( 11 )
 
+[connection signal="pressed" from="VBoxContainer/Import/ImportButton" to="." method="_on_ImportButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="Back/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[resource]
+ItemList/styles/bg = SubResource( 11 )
+ItemList/styles/bg_focus = SubResource( 13 )
+ItemList/styles/selected = SubResource( 14 )
+ItemList/styles/selected_focus = SubResource( 15 )
