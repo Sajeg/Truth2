@@ -30,6 +30,8 @@ func _on_CreditsButton_pressed():
 	$VBoxContainer/Credits2.visible = true
 	$VBoxContainer/Credits3.visible = true
 	$VBoxContainer/Credits4.visible = true
+	$VBoxContainer/Credits5.visible = true
+	$VBoxContainer/Credits6.visible = true
 
 	
 	$transition/AnimationPlayer.play("fade_left_end")
