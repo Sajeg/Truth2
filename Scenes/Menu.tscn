@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/icons/angle-left-solid.png" type="Texture" id=3]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/standart.tres" type="DynamicFont" id=5]
 
 [sub_resource type="DynamicFont" id=6]
 size = 150
@@ -229,45 +230,67 @@ normal = ExtResource( 4 )
 
 [node name="Credits1" type="Label" parent="VBoxContainer"]
 visible = false
-margin_top = 290.0
+margin_top = 166.0
 margin_right = 541.0
-margin_bottom = 361.0
+margin_bottom = 216.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = ExtResource( 5 )
 text = "Programmer:"
 align = 1
 valign = 1
 
 [node name="Credits2" type="Label" parent="VBoxContainer"]
 visible = false
-margin_top = 328.0
+margin_top = 193.0
 margin_right = 541.0
-margin_bottom = 399.0
+margin_bottom = 243.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 12 )
-text = "Johann Specht"
+custom_fonts/font = ExtResource( 5 )
+text = "Johann"
 align = 1
 valign = 1
 
 [node name="Credits3" type="Label" parent="VBoxContainer"]
 visible = false
-margin_top = 365.0
+margin_top = 220.0
 margin_right = 541.0
-margin_bottom = 436.0
+margin_bottom = 270.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = ExtResource( 5 )
 text = "Icons:"
 align = 1
 valign = 1
 
 [node name="Credits4" type="Label" parent="VBoxContainer"]
 visible = false
-margin_top = 403.0
+margin_top = 247.0
 margin_right = 541.0
-margin_bottom = 474.0
+margin_bottom = 297.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = ExtResource( 5 )
 text = "fontawesome.com"
+align = 1
+valign = 1
+
+[node name="Credits5" type="Label" parent="VBoxContainer"]
+visible = false
+margin_top = 274.0
+margin_right = 541.0
+margin_bottom = 324.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Font:"
+align = 1
+valign = 1
+
+[node name="Credits6" type="Label" parent="VBoxContainer"]
+visible = false
+margin_top = 301.0
+margin_right = 541.0
+margin_bottom = 351.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Roboto"
 align = 1
 valign = 1
 

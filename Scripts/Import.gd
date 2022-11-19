@@ -47,7 +47,10 @@ func _on_TruthButton_pressed():
 
 func _on_FileDialog_file_selected(path:String):
     var file = File.new()
+    var dir = Directory.new()
     if import == "dare":
+        dir.remove(path_dare)
+
         file.open(path,File.READ)
         Global.dare = parse_json(file.get_as_text())
         file.close()
@@ -56,10 +59,13 @@ func _on_FileDialog_file_selected(path:String):
         file.store_line(to_json(Global.dare))
         file.close()
     elif import == "truth":
+        dir.remove(path_truth)
+
         file.open(path,File.READ)
+        print(file.get_as_text())
         Global.truth = parse_json(file.get_as_text())
         file.close()
 
         file.open(path_truth,File.WRITE)
-        file.store_line(to_json(Global.dare))
+        file.store_line(to_json(Global.truth))
         file.close()

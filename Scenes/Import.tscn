@@ -239,10 +239,11 @@ margin_top = -200.0
 margin_right = 271.0
 margin_bottom = 509.0
 theme = ExtResource( 5 )
-window_title = "Open File to Import"
+window_title = "Open a File"
 mode = 0
 access = 2
 filters = PoolStringArray( "*.json; JSON" )
+show_hidden_files = true
 
 [node name="Back" type="Control" parent="."]
 margin_right = 40.0
