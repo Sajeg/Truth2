@@ -5,24 +5,14 @@ var truth = {}
 
 var players = {
 	"0" : {
-		"name" : "Ole",
+		"name" : "Horst",
 		"sex" : "male",
 		"level" : 0
 	},
 	"1" : {
-		"name" : "Hans",
-		"sex" : "male",
-		"level" : 0
-	},
-	"2" : {
 		"name" : "Lisa",
 		"sex" : "female",
 		"level" : 0
-	},
-	"3" : {
-		"name" : "Frauke",
-		"sex" : "female",
-		"level" : 1
 	}
 }
 
