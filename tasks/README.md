@@ -2,7 +2,7 @@
 ------------------------------
 
 Jede Frage oder Aufgabe ist nach folgendem Schema aufgebaut:
-```
+```json
 "0" : {
 		"task" : "Erzähle wenn du schon mal umgezogen bist, wo du früher gewohnt hast.",
 		"level" : 0,
