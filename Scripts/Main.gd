@@ -148,7 +148,7 @@ func _on_done_yes_pressed():
 func _on_done_no_pressed():
 	if acting_player.level > 0:
 		acting_player.level -= 1
-		text_display.visible = false
+	text_display.visible = false
 	new_player()
 
 
